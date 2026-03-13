@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pos_setup_wizard/ui/routes/routes.dart';
 import 'package:pos_setup_wizard/util/screen_size.dart';
 
 class HomeView extends StatelessWidget {
@@ -44,7 +45,9 @@ class HomeView extends StatelessWidget {
                       SizedBox(height: 10),
 
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          AppRoute(context: context).posSetUp();
+                        },
                         child: Row(
                           children: [
                             Text("Get Started"),
