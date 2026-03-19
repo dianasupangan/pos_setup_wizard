@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:pos_setup_wizard/ui/core/theme/theme.dart';
-import 'package:pos_setup_wizard/ui/home/home_view.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'ui/core/theme/theme.dart';
+import 'ui/pos_setup/widgets/pos_view.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Set up Wizard',
       theme: AppTheme.themeData,
-      home: const HomeView(),
+      home: const PosView(),
     );
   }
 }
