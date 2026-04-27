@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-abstract final class AppColors {
+abstract final class LightAppColors {
   static const black1 = Color.fromARGB(255, 0, 0, 0);
   static const white1 = Color.fromARGB(255, 255, 255, 255);
   static const grey1 = Color.fromARGB(255, 243, 243, 243);
@@ -10,8 +10,8 @@ abstract final class AppColors {
   static const onPrimary = Color.fromARGB(255, 221, 239, 221);
   static const secondary = Colors.blue;
   static const onSecondary = white1;
-  static const surface = white1;
-  static const onSurface = Color.fromARGB(255, 0, 0, 0);
+  static const tertiary = Colors.yellow;
+  static const onTertiary = white1;
   static const error = Color.fromARGB(255, 251, 235, 236);
   static const onError = Colors.red;
 
@@ -21,14 +21,16 @@ abstract final class AppColors {
 
   static const lightColorScheme = ColorScheme(
     brightness: Brightness.light,
-    primary: AppColors.primary,
-    onPrimary: AppColors.white1,
-    secondary: AppColors.secondary,
-    onSecondary: AppColors.onSecondary,
-    surface: AppColors.grey1,
-    onSurface: AppColors.onSurface,
-    error: AppColors.error,
-    onError: AppColors.onError,
-    surfaceContainerLow: AppColors.onSecondary,
+    primary: LightAppColors.primary,
+    onPrimary: LightAppColors.onPrimary,
+    secondary: LightAppColors.secondary,
+    onSecondary: LightAppColors.onSecondary,
+    tertiary: LightAppColors.tertiary,
+    onTertiary: LightAppColors.onTertiary,
+    surface: LightAppColors.grey1,
+    onSurface: LightAppColors.black1,
+    error: LightAppColors.error,
+    onError: LightAppColors.onError,
+    surfaceContainerLow: LightAppColors.onSecondary,
   );
 }

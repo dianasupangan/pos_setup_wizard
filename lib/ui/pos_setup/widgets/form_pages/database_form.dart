@@ -7,6 +7,8 @@ class DatabaseForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextTheme textTheme = Theme.of(context).textTheme;
+
     final typeController = TextEditingController();
     final userController = TextEditingController();
     final hostController = TextEditingController();
@@ -14,26 +16,17 @@ class DatabaseForm extends StatelessWidget {
     final nameController = TextEditingController();
 
     return Column(
+      spacing: 10,
       children: [
-        Text("Form 1"),
-        Text("Subtitle"),
-        CustomTextfield(txtCtrl: typeController),
-        TextField(
-          controller: typeController,
-          decoration: InputDecoration(labelText: "Type"),
-        ),
-        TextField(
-          controller: typeController,
-          decoration: InputDecoration(labelText: "Type"),
-        ),
-        TextField(
-          controller: typeController,
-          decoration: InputDecoration(labelText: "Type"),
-        ),
-        TextField(
-          controller: typeController,
-          decoration: InputDecoration(labelText: "Type"),
-        ),
+        Text("POS Database Setup", style: textTheme.headlineSmall),
+
+        Text("Title 1", style: textTheme.titleMedium),
+
+        CustomTextfield(label: "Key", txtCtrl: typeController),
+        CustomTextfield(label: "User", txtCtrl: userController),
+        CustomTextfield(label: "Host", txtCtrl: hostController),
+        CustomTextfield(label: "Pass", txtCtrl: passController),
+        CustomTextfield(label: "Name", txtCtrl: nameController),
       ],
     );
   }

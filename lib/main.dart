@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'ui/core/theme/theme.dart';
+import 'ui/core/light_theme/theme.dart';
 import 'ui/pos_setup/widgets/pos_view.dart';
 
 void main() {
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Set up Wizard',
-      theme: AppTheme.themeData,
+      theme: LightAppTheme.themeData,
       home: const PosView(),
     );
   }

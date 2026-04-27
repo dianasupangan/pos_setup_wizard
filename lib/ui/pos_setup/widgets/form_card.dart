@@ -5,6 +5,7 @@ import 'package:step_progress/step_progress.dart';
 
 import '../../../data/form_pages.dart';
 import '../../../util/step_progress.dart';
+import '../../core/light_theme/button_theme.dart';
 
 class FormCard extends ConsumerWidget {
   const FormCard({super.key});
@@ -22,29 +23,36 @@ class FormCard extends ConsumerWidget {
           stepList: formPage.progressTitleList(),
           currentStep: currentPage,
         ),
-        Card(
-          child: Container(
-            width: 600,
-            child: Column(
-              children: [
-                formPages[currentPage],
-                Row(
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        ref.watch(pageHandler).returnPage();
-                      },
-                      child: Text("Return"),
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        ref.watch(pageHandler).nextPage();
-                      },
-                      child: Text("Next"),
-                    ),
-                  ],
-                ),
-              ],
+        SingleChildScrollView(
+          child: Card(
+            child: Container(
+              margin: EdgeInsets.all(20),
+              width: 600,
+              child: Column(
+                spacing: 10,
+                children: [
+                  formPages[currentPage],
+                  Row(
+                    spacing: 10,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      OutlinedButton(
+                        onPressed: () {
+                          ref.watch(pageHandler).returnPage();
+                        },
+                        style: CustomButtonTheme().primaryOutlinedButton,
+                        child: Text("Return"),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          ref.watch(pageHandler).nextPage();
+                        },
+                        child: Text("Next"),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),
